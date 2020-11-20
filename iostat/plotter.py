@@ -124,7 +124,8 @@ class Plotter(Renderer):
         for disk in device['stats']:
             for disk_name, disk_stat in disk.items():
                 for i, column in enumerate(device['columns']):
-                    _disk_stat_data[column] = disk_stat[i]
+                    print('{} {}'.format(len(disk_stat), i))
+                    _disk_stat_data[column] = disk_stat[i-1]
                 for name in data:
                     if name == IO_RQM:
                         columns = ['rrqm/s', 'wrqm/s']
