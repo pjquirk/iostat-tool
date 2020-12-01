@@ -49,7 +49,7 @@ class Parser:
         self.device_stat['stats'].append(stat)
 
     def parse_columns(self, d, line):
-        d['columns'] = line[line.find(':') + 1:].strip().split()
+        d['columns'] = line[line.find(' ') + 1:].strip().split()
 
     def _parse(self, line):
         if line == '\n':
